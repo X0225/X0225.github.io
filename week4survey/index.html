@@ -1,57 +1,83 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-<title>Survey Data</title>
-<style>
-    body {
-    	width: 500px;
-    	margin: 0 auto;
-    	padding: 0 30px;
-    	border: 2px solid blue;
-    }
-    dt {
-        font-weight: bold;
-    }
-</style>
-<script type="text/javascript">
-//<![CDATA]
-var decode = function ( text ) {
-    text = text.replace(/\+/g, " ");
-    text = text.replace(/%[a-fA-F0-9]{2}/g, 
-        function ( text ) {
-            return String.fromCharCode( "0x" + text.substr(1,2));
+	<meta charset="utf-8">
+    <title>Complete a Form</title>
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+		body {
+			font: 87.5% Arial, Helvetica, sans-serif;
+			width: 500px;
+		    margin: 20px auto;
+		    padding: 20px;
+		    border: 2px solid blue;
+		}
+		h1 {
+			color: blue; 
+			font-size: 140%;
+		}
+		h2 {
+			font-size: 115%;
+			padding: .5em 0;
+		}
+		label {
+			color: blue;
+			float: left;
+			width: 8em;
+			font-weight: bold;
+			text-align: left;
+		}
+		input {
+			width: 15em;
+			margin: 0 0 .5em 1em;
+		}
+		#button, #reset {
+			width: 7em;
+			background-color: silver;
+			box-shadow: 2px 2px 0 blue; }
+		#button {
+			margin-left: 9em;
+		}
+        input[type="checkbox"]{
+            width:13px;
         }
-    );
-    return text;
-}
-    
-var display_data = function () {
-    var query = location.search.replace("?", "");
-    if ( query == "" ) return;
-    
-    var fields = query.split("&");
-    
-    if ( fields.length == 0 ) {
-        document.write("<p>No data was submitted.</p>");
-    } else {
-        document.write("<dl>");
-        var field_parts;
-        for ( var i in fields ) {
-            field_parts = fields[i].split("=");
-            field_parts[0] = decode( field_parts[0] );
-            field_parts[1] = decode( field_parts[1] );
-            document.write("<dt>" + field_parts[0] + "</dt>");
-            document.write("<dd>" + field_parts[1] + "</dd>");
-        }
-        document.write("</dl>");
-    }
-}
-//]]>
-</script>
+	</style>
 </head>
 
 <body>
-    <h1>Survey Data</h1>
-    <script>display_data();</script>
+<h1>Please complete our survey</h1>
+<form name="myform" action="survey_data.html" method="get">
+	
+	<h2>Contact information</h2>
+	<label for="email">Email address:</label>
+    <input type="email" name="email" id="email"><br>
+    <label for="firstname">First name:</label>
+    <input type="text" name="firstname" id="firstname"><br>
+    <label for="lastname">Last name:</label>
+    <input type="text" name="lastname" id="lastname"><br>
+    
+    <h2>Geographic information</h2>
+    <lable for="state" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">State:</lable>
+    <input type="text" name="state" id="state" placeholder="Two characters" pattern="[A-Za-a]{2}"><br>
+    <lable for="zipcode" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">Zip code:</lable>
+    <input type="text" name="zipcode" id="zipcode" placeholder="Five digits" pattern="\d{5}"><br>
+    
+    <h2>How did you hear about us?</h2>
+    <lable for="websearch" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">Web Search:</lable>
+    <input type="checkbox" value="websearch" name="websearch" id="websearch"><br>
+    <lable for="facebook" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">Facebook:</lable>
+    <input type="checkbox" value="facebook" name="facebook" id="facebook"><br>
+    <lable for="twitter" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">Twitter:</lable>
+    <input type="checkbox" value="twitter" name="twitter" id="twitter"><br>
+    <lable for="email message" style="color: blue; float: left; width: 8em; font-weight: bold; text-align: left;">Email message:</lable>
+    <input type="checkbox" value="email message" name="email message" id="email message"><br>
+    
+    <h2>Thank you for taking our survey!</h2>
+    <input type="submit" name="button" id="button" value="Submit">
+    <input type="reset" name="reset" id="reset"> 
+</form>
 </body>
 </html>
