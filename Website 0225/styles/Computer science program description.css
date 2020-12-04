@@ -1,0 +1,147 @@
+html {
+    background-image: url("../images/1.jpg");
+    background-size: 100% 100%;
+}
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+h1,h2,h3,p { 
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    padding: 15px;
+    padding-bottom: 30px;
+    color: aliceblue;
+    margin-left: 80px;
+    
+}
+header img {
+    float: left;
+    padding-right: 50px;
+    height: 110px;
+}
+header h2 {
+    font-size: 300%;
+    font-family: fantasy;
+    font-style: oblique;
+}
+header h3 {
+    font-size: 140%;
+    padding-top: 10px;
+}
+
+#nav_menu ul {
+    padding-top: 10px;
+    background-color: skyblue; 
+    list-style: none;
+    position: relative; 
+    margin-top: 0px;
+    padding-bottom: 10px;
+    width: 0 auto;
+}
+#nav_menu ul li { 
+    float: left; 
+    margin-left: 60px;
+    margin-right: 60px;
+}
+#nav_menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+#nav_menu ul li a.current { 
+    color: blanchedalmond; 
+}
+#nav_menu ul ul {
+    display: none;
+    position: absolute;
+    top: 26px;
+    text-align: left;
+}               
+#nav_menu ul ul li { 
+    float: none;
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#nav_menu ul ul li:hover {
+    background-color: dodgerblue;
+}
+#nav_menu ul li:hover > ul {
+    display: block; 
+}
+#nav_menu > ul::after {
+    content: "";
+    display: block;
+    clear: both; 
+}
+
+main {
+    padding: 0px 25px 0px px;
+}
+main h2 {
+    font-size: 150%;
+    color: black;
+    text-align: center;
+}
+
+aside {
+    width: 450px;
+    height: 500px;
+    margin-top: 120px;
+    margin-right: 0px;
+    margin-left: 940px;
+}
+aside ul {
+    padding-top: 70px;
+}
+aside ul li {
+    border: 2px solid black;
+    margin: 15px;
+    padding: 15px;
+    list-style: none;
+    text-align: center;
+    background-color: skyblue;
+}
+aside a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+section {
+    float: left;
+    width: 860px;
+    height: 730px;
+    margin-left: 60px;
+    margin-top: 20px;
+    position: absolute;
+}
+table,tr,td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 7px;
+}
+table {
+    margin-left: 10px;
+}
+div {
+    text-align: center;
+}
+
+footer {
+    clear: both;
+    margin-top: 100px;
+}
+footer p {
+    font-size: 100%;
+    text-align: right;
+    margin-right: 80px;
+}
